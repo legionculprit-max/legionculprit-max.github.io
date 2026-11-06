@@ -3,54 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legion Culprit | Personal Website</title>
+<title>Pouya | Creative Developer</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #09090f;
-    color: white;
-    font-family: Tahoma, sans-serif;
+    background: #09090d;
+    color: #f5f5f5;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    line-height: 1.9;
+}
+
+.container {
+    width: 85%;
+    max-width: 1150px;
+    margin: auto;
 }
 
 header {
-    padding: 25px 10%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #20202a;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #252535;
 }
 
 .logo {
-    color: #a78bfa;
     font-size: 23px;
-    font-weight: bold;
+    font-weight: 800;
+    color: #a78bfa;
+    direction: ltr;
 }
 
-nav a {
-    color: #ccc;
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    color: #aaa;
     text-decoration: none;
-    margin-right: 20px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.links a:hover {
+    color: #a78bfa;
 }
 
 .hero {
-    min-height: 75vh;
+    min-height: 650px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 30px;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.tag {
+    color: #a78bfa;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.5;
+    margin: 20px 0;
 }
 
 .hero h1 span {
@@ -58,37 +94,146 @@ nav a {
 }
 
 .hero p {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 2;
-    max-width: 600px;
+    color: #999;
+    max-width: 560px;
+    font-size: 16px;
+}
+
+.photo {
+    width: 340px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid #5b4294;
+    box-shadow: 0 15px 70px #7c3aed22;
 }
 
 .button {
     display: inline-block;
     margin-top: 30px;
-    padding: 14px 30px;
+    padding: 11px 27px;
     background: #8b5cf6;
     color: white;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 9px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #7040d0;
+    transform: translateY(-3px);
 }
 
 section {
-    padding: 60px 10%;
-    text-align: center;
+    padding: 90px 0;
+    border-top: 1px solid #20202a;
 }
 
-h2 {
+.section-title {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.section-title span {
     color: #a78bfa;
-    margin-bottom: 25px;
+}
+
+.about-text {
+    color: #aaa;
+    font-size: 15px;
+    max-width: 900px;
+    line-height: 2.5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #12121b;
+    border: 1px solid #252535;
+    padding: 27px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #c4b5fd;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.card p {
+    color: #999;
+    font-size: 14px;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tool {
+    direction: ltr;
+    background: #171421;
+    border: 1px solid #373047;
+    color: #c4b5fd;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 35px;
     color: #777;
-    border-top: 1px solid #252535;
+    font-size: 13px;
+    border-top: 1px solid #20202a;
+}
+
+@media(max-width: 750px) {
+    .container {
+        width: 90%;
+    }
+
+    .links {
+        gap: 12px;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .photo {
+        width: 260px;
+        height: 320px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
 }
 </style>
 </head>
@@ -96,35 +241,27 @@ footer {
 <body>
 
 <header>
-    <div class="logo">LEGION CULPRIT</div>
-    <nav>
+<nav class="container">
+    <div class="logo">POUYA.</div>
+    <div class="links">
         <a href="#about">درباره من</a>
-        <a href="#contact">ارتباط</a>
-    </nav>
+        <a href="#skills">مهارت‌ها</a>
+        <a href="#interests">علاقه‌مندی‌ها</a>
+    </div>
+</nav>
 </header>
 
+<main>
+
+<div class="container">
 <div class="hero">
-    <h1>سلام، من <span>پویا</span> هستم</h1>
-    <p>
-        به وب‌سایت شخصی من خوش اومدی.
-        اینجا قراره با من، مهارت‌ها و پروژه‌هام بیشتر آشنا بشی.
-    </p>
-    <a href="#about" class="button">بیشتر درباره من</a>
-</div>
 
-<section id="about">
-    <h2>درباره من</h2>
-    <p>اینجا می‌تونی درباره خودت و علاقه‌مندی‌هات بنویسی.</p>
-</section>
+    <div class="hero-text">
+        <div class="tag">WELCOME TO MY PORTFOLIO</div>
 
-<section id="contact">
-    <h2>ارتباط با من</h2>
-    <p>به‌زودی راه‌های ارتباطی من اینجا قرار می‌گیرن.</p>
-</section>
+        <h1>
+            سلام، من <span>پویا</span> هستم
+        </h1>
 
-<footer>
-    © 2026 Legion Culprit - All Rights Reserved
-</footer>
-
-</body>
-</html>
+        <p>
+            دانشجوی مهندسی کامپیوتر، علاقه‌مند به دنی
